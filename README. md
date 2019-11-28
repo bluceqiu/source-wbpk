@@ -1,1 +1,3 @@
 > 定义：loader就是接收一些内容，经过一些转化，输出新的内容
+> 参考：https://www.cnblogs.com/hanshuai/p/11287231.html
+> git: https://github.com/webpack/webpack/blob/master/lib/NormalModuleFactory.js#L191-L222
