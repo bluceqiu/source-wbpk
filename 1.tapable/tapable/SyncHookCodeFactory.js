@@ -28,9 +28,7 @@ class SyncHookCodeFactory{
     }
 
     create(options){
-        debugger
         let res =  new Function(this.args(), this.header() + this.content());
-debugger
         return res;
     }
 }
