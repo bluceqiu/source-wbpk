@@ -1,4 +1,5 @@
 const path = require('path');
+const MyPlugin = require("./plugins/MyPlugin");
 module.exports = {
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
@@ -24,5 +25,8 @@ module.exports = {
                 use: ['loader1', 'loader2', 'loader3']
             }
         ]
-    }
+    },
+    plugins:[
+        new MyPlugin()
+    ]
 }
