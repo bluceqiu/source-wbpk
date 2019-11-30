@@ -7,7 +7,7 @@ class Compiler extends Tapable{
             environment: new SyncHook([]),
             afterEnvironment: new SyncHook([]),
             afterPlugins: new SyncHook([]),
-            entryOption: new SyncHook([]),
+            entryOption: new SyncHook(["context", "entry"]),
             make: new AsyncParallelHook(["compilation"]),
             beforeRun: new AsyncSeriesHook(["compiler"]),
             run: new AsyncSeriesHook(["compiler"]),
@@ -26,14 +26,14 @@ class Compiler extends Tapable{
         const onCompiled = (err, compilation)=>{
             // 编译完成后的回调
         }
-        this.hooks.beforeRun.callAsync((this, err)=>{
-            this.hooks.run.callAsync((this, err)=>{
+        this.hooks.beforeRun.callAsync(this, err=>{
+            this.hooks.run.callAsync(this, err=>{
                 this.compile(onCompiled);
             })
         })
     }
 
-    newCompilation(){
+    newCompilation(params){
         let compilation =  new Compilation(this);
         this.hooks.thisCompilation.call(compilation, params)
         this.hooks.compilation.call(compilation, params);

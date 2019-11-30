@@ -10,4 +10,6 @@
 
 
 // loader 测试
+const title = require('./title');
+console.log(title);
 console.log('index');

@@ -4,7 +4,7 @@ const WebpackOptionsApply = require("./WebpackOptionsApply");
 
 const webpack = (options, callback) => {
     options.context = options.context || process.cwd();
-    let compiler = new Compiler();
+    let compiler = new Compiler(options.context);
 
     new NodeEnvironmentPlugin().apply(compiler);
 

@@ -11,3 +11,5 @@ class SingleEntryPlugin{
         })
     }
 }
+
+module.exports = SingleEntryPlugin;
