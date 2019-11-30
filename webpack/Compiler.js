@@ -23,8 +23,10 @@ class Compiler extends Tapable{
         this.context = context;
     }
     run(cb){
+        console.log('compiler.run...enter');
         const onCompiled = (err, compilation)=>{
             // 编译完成后的回调
+            console.log('编译完成后的回调, onCompiled');
         }
         this.hooks.beforeRun.callAsync(this, err=>{
             this.hooks.run.callAsync(this, err=>{
@@ -46,6 +48,7 @@ class Compiler extends Tapable{
             let compilation = this.newCompilation();
             this.hooks.make.callAsync(compilation, err=>{
                 console.log('make finish');
+                onCompiled();
             });
         })
     }
