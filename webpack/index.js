@@ -1,6 +1,11 @@
-const NodeEnvironmentPlugin = require("./plugins/NodeEnvironmentPlugin");
-const Compiler = require("./Compiler");
-const WebpackOptionsApply = require("./WebpackOptionsApply");
+/*
+ * @Author: xiaolong.qiu
+ * @Date: 2019-12-16 10:34:19
+ * @LastEditTime: 2019-12-16 10:53:57
+ */
+const NodeEnvironmentPlugin = require("./plugins/NodeEnvironmentPlugin"); // 绑定node环境下的文件读写方式
+const Compiler = require("./Compiler"); // tapable的一个实例，里面包含了tapable一些列的实例
+const WebpackOptionsApply = require("./WebpackOptionsApply"); // 开始解析config文件，里面包含了对入口文件的解析等操作
 
 const webpack = (options, callback) => {
     console.log(`当前工作目录是: ${process.cwd()}`);

@@ -1,3 +1,8 @@
+/*
+ * @Author: xiaolong.qiu
+ * @Date: 2019-12-16 10:34:19
+ * @LastEditTime: 2019-12-16 11:04:37
+ */
 const path = require('path');
 const MyPlugin = require("./plugins/MyPlugin");
 module.exports = {
@@ -27,6 +32,6 @@ module.exports = {
         ]
     },
     plugins:[
-        new MyPlugin()
+        new MyPlugin() // 调用自己的插件
     ]
 }
